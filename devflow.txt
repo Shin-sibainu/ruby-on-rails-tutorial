@@ -1,0 +1,27 @@
+//https://pikawaka.com/rails/mvc
+
+==========================================
+1. ruby install (https://rubyinstaller.org/) 
+2. ruby + devkit(x64) (latest)
+3. setup
+4. commnadprompt => 1,3 => enter
+5. successed => msys2 installed.
+6. ruby -v 
+
+7. sqlite install (https://www.sqlite.org/index.html)
+8. percompiled binaries for windows (sqlite-tools-win32-x86-3320200.zip)
+9. zip kaitou
+10. sqlite file to ruby-in-bin-directory (sqlite3.exe, aqldiff.exe, sqlite3_analyzer.exe)
+11. sqlite3 -v
+
+https://medium-company.com/ruby-on-rails%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e6%89%8b%e9%a0%86/
+12. bundler install (gem install bundler) (rubyライブラリの依存関係とバージョン管理するためのツール)
+13. gem install rails 
+14. rails -v
+
+==========================================
+1. rails new ruby-sns-tutorial
+2. rails generate model Tweet title:string content:text
+3. rails db:migrate
+4. rails generate controller Tweets
+5. config/routes.rb
