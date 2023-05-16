@@ -1,26 +1,27 @@
 class TweetsController < ApplicationController
     # edit, update, destroyのアクションが実行されるまえに、set_tweetメソッドを実行する
-    before_action :authenticate_user!, except: [:index]
+    # before_action :authenticate_user!, except: [:index]
     before_action :set_tweet, only: [:edit, :update, :destroy]
 
     def index 
-        @tweets = Tweet.all
+        # @tweets = Tweet.all
+        @tweets = Tweet.order(created_at: :desc)
     end
 
     def new
         #新しいTweetオブジェクトをメモリ上に作成。まだDB上には保存されていない。
         @tweet = Tweet.new
     end
-
     def create
         @tweet = Tweet.new(tweet_params)
-
-        if @tweet.save #保存に成功したらtrueを返す。
-            redirect_to tweets_path #indexページへリダイレクト
+        # @tweet.user_id = User.first.id # here is where you're using User
+      
+        if @tweet.save
+          redirect_to tweets_path
         else
-            render :new #newフォームが再度表示されます。この時、フォームに入力されていたデータは保持され、エラーメッセージと共にユーザーに表示できます。
+          render :new
         end
-    end
+      end
 
     def edit
     end
