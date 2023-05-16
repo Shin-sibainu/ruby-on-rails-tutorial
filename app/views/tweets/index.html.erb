@@ -1,12 +1,23 @@
-<h1>Tweets</h1>
+<h1>Ruby 掲示板</h1>
 
-<%= link_to "新しい呟き", new_tweet_path %>
+<div class="button-container">
+  <%= link_to "新しい投稿", new_tweet_path, class: "link-button" %>
+</div>
 
 <ul>
-  <%= @tweets.each do |tweet| %>
+  <% @tweets.each do |tweet| %>
   <li>
     <h2><%= tweet.title %></h2>
+
     <p><%= tweet.content %></p>
+    <span>
+      <small><%= tweet.created_at.strftime("%Y-%m-%d %H:%M") %></small>
+    </span>
+    <div class="edit-delete-wrapper">
+      <%= link_to '編集', edit_tweet_path(tweet), class: "link-button" %> <%=
+      button_to '削除', tweet_path(tweet), method: :delete, data: { confirm:
+      '本当に削除しますか？' }, class: "link-delete-button" %>
+    </div>
   </li>
   <% end %>
 </ul>

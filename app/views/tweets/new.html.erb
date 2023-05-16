@@ -1,0 +1,16 @@
+<h1>新しい投稿</h1>
+<!-- formwith...フォームが送信されたときにデータをどこに送信するかを知っている必要がある。 -->
+<!-- local: true...フォームデータの送信方式を指定。trueだとHTTPリクエストとして行われる。falseならAjax送信 -->
+<%= form_with model: @tweet, local: true, html: {class: "form-container"} do
+|form| %>
+<div class="form-input">
+  <%= form.label :title %> <%= form.text_field :title %>
+</div>
+
+<div class="form-input">
+  <%= form.label :content %> <%= form.text_area :content %>
+</div>
+<div class="button-container">
+  <%= form.submit "投稿", class: "link-button" %>
+</div>
+<% end %>
