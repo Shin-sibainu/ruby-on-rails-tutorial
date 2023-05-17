@@ -25,3 +25,12 @@ https://medium-company.com/ruby-on-rails%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%
 3. rails db:migrate
 4. rails generate controller Tweets
 5. config/routes.rb
+6. tweets_controller.rb (index, new, create, private, tweet_params) 
+7. views/tweets/index.html.erb
+8. views/tweets/new.html.erb
+9. app/assets/stylesheets/application.css
+10. routes.rb + edit, update, destroy
+11. tweets_controller.rb => before_action, edit, update, set_tweet
+12. tweets/edit.html.erb
+13. index.html.erb => edit and delete button added
+14. optional...user authentication.
